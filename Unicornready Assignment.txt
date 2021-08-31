@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    int A = 0, B  = 0, C = 0, D = 0,r,q,x,y;
+    string s;
+    cin >> s;
+    int s_len = s.length();
+    for(int j=0; j<s_len; j++) {
+        if(s[j] == 'A') {
+            A++;
+        } else if(s[j] == 'B') {
+            B++;
+        } else if(s[j] == 'C') {
+            C++;
+        } else if(s[j] == 'D') {
+            D++;
+        }
+    }
+ r=A%4;
+ q=A/4;
+ x=C%6;
+ y=C/6;
+ if(A%4!=0)
+ {
+        A=q*100+r*35;
+ }
+ else if(A%4==0)
+ {
+     A=A*25;
+ }
+ else if(r<=3)
+ {
+     A=A*35;
+ } 
+    if(B>0)
+    {
+        B=B*65;
+    }
+    if(C%6==0)
+    {
+        C=250;
+    }
+    if(C%6!=0)
+    {
+        C=x*50+y*250;
+    }
+   
+    if(D>0)
+    {
+        D=D*85;
+    }
+  cout<<A+B+C+D<<endl;
+    return 0;
+}
